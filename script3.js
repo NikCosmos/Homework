@@ -38,10 +38,12 @@ function getOperand(messange) {
 }
 
 function checkOperand(operand) {
-   if (!isNaN(operand)) {
-      return false;
-   } else {
+   if (isNaN(operand)) {
       return true;
+   } else if (operand === null) {
+      return true;
+   } else {
+      return false;
    }
 }
 
