@@ -54,10 +54,8 @@ function calculate(x, y) {
    return sum;
 }
 
+
 function showResult(x, y) {
-   let res = +y[0];
-   for (i = 1; i < y.length; i++) {
-      res = `${res} ${x} ${+y[i]}`;
-   }
-   return alert(`${res} = ${result}`);
+   let str = y.join(`${x}`);
+   return alert(`${str} = ${result}`);
 }
