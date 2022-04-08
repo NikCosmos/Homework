@@ -25,13 +25,13 @@ function getOperand() {
    do {
       operand = prompt('Числа');
    } while (operand === null || operand === '');
-   return splitOperand(operand);
+   return operand.split(',');
 }
 
-function splitOperand(operand) {
-   let arr = operand.split(',');
-   return arr;
-}
+// function splitOperand(operand) {
+//    let arr = operand.split(',');
+//    return arr;
+// }
 
 function calculate(x, y) {
    let sum = +y[0];
@@ -53,7 +53,6 @@ function calculate(x, y) {
    }
    return sum;
 }
-
 
 function showResult(x, y) {
    let str = y.join(`${x}`);
