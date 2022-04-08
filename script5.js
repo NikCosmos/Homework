@@ -23,21 +23,25 @@ const students = [
    },
 ];
 
-// averageStudentMark(students[0]);
-// averageGroupMark(students);
+averageStudentMark(students[0]);
+averageGroupMark(students);
 
 function averageStudentMark(indexStudent) {
-   const sum = indexStudent.marks.reduce((acc, val) => acc + val);
+   const sum = calcMarks(indexStudent.marks);
    alert(Math.trunc(sum / indexStudent.marks.length));
 }
 
 function averageGroupMark(students) {
    const arrMarks = getMarks(students);
-   const sumMarks = arrMarks.reduce((acc, val) => acc + val);
+   const sumMarks = calcMarks(arrMarks);
    alert(Math.trunc(sumMarks / arrMarks.length));
 }
 
 function getMarks(students) {
    const all = students.reduce((acc, val) => [acc, val.marks], []);
    return all.flat(4);
+}
+
+function calcMarks(val) {
+   return val.reduce((acc, val) => acc + val);
 }
