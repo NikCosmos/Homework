@@ -1,12 +1,12 @@
 function createCalculator(initValue) {
    let result = initValue;
    return {
-      add: (n) => console.log((result += n)),
-      sub: (n) => console.log((result -= n)),
-      mult: (n) => console.log((result *= n)),
-      div: (n) => console.log((result /= n)),
-      set: (n) => console.log((result = n)),
-      get: () => console.log(result),
+      add: (n) => (result += n),
+      sub: (n) => (result -= n),
+      mult: (n) => (result *= n),
+      div: (n) => (result /= n),
+      set: (n) => (result = n),
+      get: () => result,
    };
 }
 
