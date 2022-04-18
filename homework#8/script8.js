@@ -41,6 +41,24 @@ function calculate() {
    return (sum.style.color = '#008000'), (sum.textContent = `= ${result}`);
 }
 
+
+//========================================================================================================================================================
+
+function getValue(operand) {
+   return operand.value;
+}
+
+function showResult(val, errVal) {
+   if (isNaN(val))
+   return (errVal.textContent = 'Ошибка!'), (errVal.style.color = '#ff0000');
+   if (val === '')
+   return (
+      (errVal.textContent = 'Пустая строка!'),
+      (errVal.style.color = '#ff0000')
+      );
+      return (errVal.textContent = 'Все окей!'), (errVal.style.color = '#008000');
+}
+
 function calcResult(a, b) {
    switch (getValue(actionEl)) {
       case '+':
@@ -52,21 +70,4 @@ function calcResult(a, b) {
       case '/':
          return a / b;
    }
-}
-
-//========================================================================================================================================================
-
-function getValue(operand) {
-   return operand.value;
-}
-
-function showResult(val, errVal) {
-   if (isNaN(val))
-      return (errVal.textContent = 'Ошибка!'), (errVal.style.color = '#ff0000');
-   if (val === '')
-      return (
-         (errVal.textContent = 'Пустая строка!'),
-         (errVal.style.color = '#ff0000')
-      );
-   return (errVal.textContent = 'Все окей!'), (errVal.style.color = '#008000');
 }
