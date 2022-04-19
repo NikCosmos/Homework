@@ -27,20 +27,9 @@ calcBtn.addEventListener('click', calculate);
 function calculate() {
    const a = +getValue(operandOneEl);
    const b = +getValue(operandTwoEl);
-   const result = calcResult(a, b);
-   if (isNaN(result)) {
-      return (sum.textContent = 'Ошибка!'), (sum.style.color = '#ff0000');
-   }
-   if (result === Infinity) {
-      return (
-         (sum.textContent = 'Делить на ноль низя:D'),
-         (sum.style.color = '#0000ff')
-      );
-   }
-
-   return (sum.style.color = '#008000'), (sum.textContent = `= ${result}`);
+   const result = calcResult(a, b, getValue(actionEl));
+   return validResult(result);
 }
-
 
 //========================================================================================================================================================
 
@@ -49,18 +38,37 @@ function getValue(operand) {
 }
 
 function showResult(val, errVal) {
-   if (isNaN(val))
-   return (errVal.textContent = 'Ошибка!'), (errVal.style.color = '#ff0000');
-   if (val === '')
-   return (
-      (errVal.textContent = 'Пустая строка!'),
-      (errVal.style.color = '#ff0000')
-      );
-      return (errVal.textContent = 'Все окей!'), (errVal.style.color = '#008000');
+   return validVal(val, errVal);
 }
 
-function calcResult(a, b) {
-   switch (getValue(actionEl)) {
+function validVal(val, errVal) {
+   if (isNaN(val)) {
+      errVal.textContent = 'Ошибка!';
+      errVal.style.color = '#ff0000';
+   } else if (val === '') {
+      errVal.textContent = 'Пустая строка!';
+      errVal.style.color = '#ff0000';
+   } else {
+      errVal.textContent = 'Все окей!';
+      errVal.style.color = '#008000';
+   }
+}
+
+function validResult(result) {
+   if (isNaN(result)) {
+      sum.textContent = 'Ошибка!';
+      sum.style.color = '#ff0000';
+   } else if (result === Infinity) {
+      sum.textContent = 'Делить на ноль низя:D';
+      sum.style.color = '#0000ff';
+   } else {
+      sum.style.color = '#008000';
+      sum.textContent = `= ${result}`;
+   }
+}
+
+function calcResult(a, b, action) {
+   switch (action) {
       case '+':
          return a + b;
       case '-':
