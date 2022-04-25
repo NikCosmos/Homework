@@ -1,0 +1,164 @@
+/*  NULL======================================================================================================================================================== */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+   padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+   margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+   min-height: 100vh;
+   scroll-behavior: smooth;
+   text-rendering: optimizeSpeed;
+   line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+   list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+   text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+   max-width: 100%;
+   display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+   margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+   font: inherit;
+   outline: none;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+   * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+
+/* ======================================================================================================================================================== */
+
+body {
+   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.wraper {
+   background: url(img/bg.jpg);
+   height: 100vh;
+}
+
+.header {
+   height: 70px;
+   background-color: #3bd6ac;
+   color: #fff;
+   font-size: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   box-shadow: 10px 10px 30px #000;
+}
+
+.container {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+.todolist {
+   text-align: center;
+   margin-bottom: 30px;
+}
+.list {
+   height: 500px;
+   /* cursor: pointer; */
+   overflow: auto;
+}
+
+.link {
+   position: relative;
+   z-index: 10;
+   text-align: center;
+   font-size: 40px;
+   border-bottom: 2px solid #3bd6ac;
+}
+
+.task {
+}
+.getdata {
+}
+
+.inperr {
+   text-align: center;
+}
+
+.input-task {
+   font-size: 30px;
+   border-color: #000;
+   border-radius: 5px;
+}
+
+.error {
+   color: red;
+   height: 25px;
+   font-size: 30px;
+   text-align: center;
+}
+
+.addbtn {
+   background-color: #3bd6ac;
+   font-weight: bold;
+   font-size: 30px;
+}
+
+.invalid {
+   border-color: red;
+}
+
+.case-done {
+   color: green;
+}
