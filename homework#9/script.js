@@ -12,6 +12,8 @@ addTaskFormEl.addEventListener('submit', onSubmitForm);
 inputTaskEl.addEventListener('input', onTaskNameInput);
 taskListEl.addEventListener('click', onClassDone);
 
+
+
 function onSubmitForm(e) {
    e.preventDefault();
    addTaskInList();
@@ -42,9 +44,10 @@ function onClassDone(e) {
    if (e.target.classList.contains('task-item')) {
       toggleTaskClass(e.target);
    }
-   if (e.target.classList.contains('delete-btn')) {
+   if(e.target.classList.contains('delete-btn')){
       deleteTask(e.target.closest('.task-item'));
    }
+
 }
 
 function toggleTaskClass(el) {
@@ -86,6 +89,6 @@ function clearError() {
    addTaskBtnEl.disabled = false;
 }
 
-function deleteTask(el) {
-   el.remove();
+function deleteTask(el){
+   el.remove()
 }
