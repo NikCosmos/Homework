@@ -67,6 +67,8 @@ textarea,
 select {
    font: inherit;
    outline: none;
+   margin: 0;
+   padding: 0;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
@@ -85,21 +87,9 @@ body {
    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.wraper {
+.wrapper {
    background: url(img/bg.jpg);
    height: 100vh;
-}
-
-.header {
-   height: 70px;
-   background-color: #3bd6ac;
-   color: #fff;
-   font-size: 50px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-
-   box-shadow: 10px 10px 30px #000;
 }
 
 .container {
@@ -109,56 +99,26 @@ body {
    margin-right: -50%;
    transform: translate(-50%, -50%);
 }
-.todolist {
-   text-align: center;
-   margin-bottom: 30px;
-}
-.list {
-   height: 500px;
-   /* cursor: pointer; */
-   overflow: auto;
-}
 
-.link {
-   position: relative;
-   z-index: 10;
-   text-align: center;
-   font-size: 40px;
-   border-bottom: 2px solid #3bd6ac;
-}
-
-.task {
-}
-.getdata {
-}
-
-.inperr {
+.task-list {
    text-align: center;
 }
 
-.input-task {
-   font-size: 30px;
-   border-color: #000;
-   border-radius: 5px;
+.task-item {
+   font-size: 20px;
 }
 
 .error {
    color: red;
-   height: 25px;
-   font-size: 30px;
-   text-align: center;
 }
 
-.addbtn {
-   background-color: #3bd6ac;
-   font-weight: bold;
-   font-size: 30px;
+.done {
+   background-color: green;
 }
 
-.invalid {
-   border-color: red;
+.hidden {
+   opacity: 0;
 }
 
-.case-done {
-   color: green;
+.delete-btn {
 }

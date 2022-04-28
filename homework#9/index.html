@@ -9,26 +9,20 @@
       <title>Homework#9</title>
    </head>
    <body>
-      <div class="wraper">
-         <div class="header">TO DO LIST</div>
+      <div class="wrapper">
          <div class="container">
-            <div class="todolist">
-               <ul class="list"></ul>
-            </div>
-            <div class="getdata">
-               <div class="inperr">
-                  <input
-                     id="input-task"
-                     class="input-task"
-                     type="text"
-                     placeholder="Введите текст"
-                     maxlength="50"
-                  />
-                  <button id="addbtn" class="addbtn">Add</button>
-               </div>
-               <p class="error"></p>
-            </div>
+            <div id="taskList" class="task-list"></div>
+            <form id="addTaskForm">
+               <input id="inputTask" type="text" />
+               <input id="addTaskBtn" type="submit" value="Add" />
+            </form>
+            <span class="error" id="errorText"></span>
          </div>
       </div>
+      <script id="templateTasklItem" type="text/template">
+         <div class="task-item">{{task}}
+            <span class="delete-btn">X</span>
+         </div>
+      </script>
    </body>
 </html>

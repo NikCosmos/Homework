@@ -1,62 +1,91 @@
-const inputTaskEl = document.getElementById('input-task');
-const addBtnEl = document.getElementById('addbtn');
-const listEl = document.querySelector('.list');
-const errorEl = document.querySelector('.error');
+const TASK_ITEM = document.getElementById('templateTasklItem').innerHTML;
+const EMPTY_TEXT = 'Empty value';
+const SHORT_TEXT = 'Short value';
 
-addBtnEl.addEventListener('click', onAddBtn);
-inputTaskEl.addEventListener('input', valueCheck);
-inputTaskEl.addEventListener('input', checkErr);
+const inputTaskEl = document.getElementById('inputTask');
+const addTaskBtnEl = document.getElementById('addTaskBtn');
+const taskListEl = document.getElementById('taskList');
+const addTaskFormEl = document.getElementById('addTaskForm');
+const errorTextEl = document.getElementById('errorText');
 
-function onAddBtn() {
-   if (!valueCheck()) {
-      createLi();
-      addLi();
-      clearCase();
+addTaskFormEl.addEventListener('submit', onSubmitForm);
+inputTaskEl.addEventListener('input', onTaskNameInput);
+taskListEl.addEventListener('click', onClassDone);
+
+function onSubmitForm(e) {
+   e.preventDefault();
+   addTaskInList();
+}
+
+function onTaskNameInput() {
+   validateForm();
+}
+
+function validateForm() {
+   const task = getTaskName();
+   const error = validateTaskName(task);
+
+   if (error) {
+      showError(error);
    } else {
-      checkErr();
+      clearError();
    }
 }
 
-function createLi() {
-   const created = createElement('li');
-   created.textContent = getValue();
-   created.classList = 'link';
-   return created;
+function addTaskInList() {
+   const task = getTaskName();
+   addTask(task);
+   clearTask();
 }
 
-function createElement(el) {
-   return document.createElement(el);
+function onClassDone(e) {
+   if (e.target.classList.contains('task-item')) {
+      toggleTaskClass(e.target);
+   }
+   if (e.target.classList.contains('delete-btn')) {
+      deleteTask(e.target.closest('.task-item'));
+   }
 }
 
-function addLi() {
-   return listEl.append(createLi());
+function toggleTaskClass(el) {
+   el.classList.toggle('done');
 }
 
-function getValue() {
+function getTaskName() {
    return inputTaskEl.value;
 }
 
-function clearCase() {
-   inputTaskEl.value = '';
+function addTask(task) {
+   const el = createTaskEl(task);
+   taskListEl.insertAdjacentHTML('beforeend', el);
 }
 
-function valueCheck() {
-   if (getValue().length <= 3) return true;
-   if (getValue().length > 3) return false;
+function createTaskEl(task) {
+   return TASK_ITEM.replace('{{task}}', task);
 }
 
-function checkErr() {
-   if (valueCheck()) return showError();
-   clearErr();
+function validateTaskName(task) {
+   if (task === '') return EMPTY_TEXT;
+   if (task.length < 4) return SHORT_TEXT;
+   return null;
 }
 
-function showError() {
-   inputTaskEl.classList.add('invalid');
-   if (getValue() === '') return (errorEl.textContent = 'Empty value');
-   errorEl.textContent = 'Invalid value';
+function clearTask() {
+   return (inputTaskEl.value = '');
 }
 
-function clearErr() {
-   inputTaskEl.classList.remove('invalid');
-   errorEl.textContent = '';
+function showError(msg) {
+   errorTextEl.classList.remove('hidden');
+   errorTextEl.textContent = msg;
+   addTaskBtnEl.disabled = true;
+}
+
+function clearError() {
+   errorTextEl.classList.add('hidden');
+   errorTextEl.textContent = '';
+   addTaskBtnEl.disabled = false;
+}
+
+function deleteTask(el) {
+   el.remove();
 }
