@@ -46,7 +46,7 @@ function onInputNumber() {
 
 function onDeleteBtn(e) {
    if (e.target.classList.contains('delete-btn')) {
-      deleteTask(e.target.closest('.bodytb'));
+      deleteTask(e.target.closest('.bodytb'));          
    }
 }
 

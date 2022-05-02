@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+         rel="stylesheet"
+         type="text/css"
+      />
+
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/dark-theme.css" />
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/style.css" />
+
+      <script src="script.js" async></script>
+      <title>Homework#11</title>
+   </head>
+   <body>
+      <div class="container">
+         <div id="taskList" class="task-list u-full-width"></div>
+         <form id="addTaskForm">
+            <div class="row">
+               <div class="ten columns">
+                  <input
+                     name="task"
+                     type="text"
+                     id="taskNameInput"
+                     class="u-full-width"
+                  />
+                  <span id="errorContainer" class="error"></span>
+               </div>
+               <div class="two columns">
+                  <input
+                     type="submit"
+                     id="addBtn"
+                     class="u-full-width"
+                     value="Add"
+                  />
+               </div>
+            </div>
+         </form>
+      </div>
+      <script id="task-template" type="text/template">
+         <div data-id = '{{id}}' class="task-item u-full-width">
+            {{title}}
+            <span class="delete-btn">✘</span>
+         </div>;
+      </script>
+   </body>
+</html>
