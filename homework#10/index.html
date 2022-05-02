@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="script.js" async></script>
+      <title>Homework#10</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="container">
+            <table id="tableContact" class="table">
+               <caption class="table__title">
+                  Phone book
+               </caption>
+               <thead class="table__head headtb">
+                  <tr class="headtd__row">
+                     <th class="headtd__item">FirstName</th>
+                     <th class="headtd__item">LastName</th>
+                     <th class="headtd__item">Phone Number</th>
+                     <th class="headtd__item">Del</th>
+                  </tr>
+               </thead>
+            </table>
+         </div>
+         <div class="container">
+            <form id="form" class="form">
+               <div class="form__input">
+                  <input class="input" type="text" id="inputFirstName" />
+                  <span id="errorFirstName" class="err lock"></span>
+               </div>
+               <div class="form__input">
+                  <input class="input" type="text" id="inputLastName" />
+                  <span id="errorLastName" class="err lock"></span>
+               </div>
+               <div class="form__input">
+                  <input class="input" type="text" id="inputNumber" />
+                  <span id="errorNumber" class="err lock"></span>
+               </div>
+               <input id="addbtn" class="subform" type="submit" value="Add" />
+            </form>
+         </div>
+      </div>
+      <script id="tempItemPhoneBook" type="text/template">
+         <tbody class="table__body bodytb">
+            <tr>
+               <td class="bodytd__item">{{firstname}}</td>
+               <td class="bodytd__item">{{lastname}}</td>
+               <td class="bodytd__item">{{number}}</td>
+               <td id = 'deleteBtn' class = 'bodytd__item' ><span class="delete-btn">❌</span></td>
+            </tr>
+         </tbody>
+      </script>
+   </body>
+</html>
