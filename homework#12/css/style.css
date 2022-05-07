@@ -1,0 +1,42 @@
+.wrapper {
+   /* color: rgb(211, 197, 197); */
+}
+.container p {
+   color: red;
+}
+.contact-form {
+}
+.contact-table {
+}
+.contact-head {
+}
+.row {
+}
+.contact-title {
+   text-align: center;
+}
+.contact-list {
+}
+.contact-user {
+}
+.contact-name {
+   text-align: center;
+}
+.contact-surname {
+   text-align: center;
+}
+.contact-phone {
+   text-align: center;
+}
+.edit-btn {
+   text-align: center;
+   cursor: pointer;
+}
+.delete-btn {
+   text-align: center;
+   cursor: pointer;
+}
+
+.hidden {
+   visibility: hidden;
+}

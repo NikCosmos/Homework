@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+      />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <!-- <link rel="stylesheet" href="css/dark-theme.css" /> -->
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="script.js" async></script>
+      <title>Homework#12</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="container">
+            <form class="contact-form" action="">
+               <table class="contact-table u-full-width">
+                  <thead class="contact-head">
+                     <tr class="row">
+                        <th class="contact-title">Name</th>
+                        <th class="contact-title">Surname</th>
+                        <th class="contact-title">Phone</th>
+                        <th class="contact-title">Edit</th>
+                        <th class="contact-title">Delete</th>
+                     </tr>
+                  </thead>
+                  <tbody class="contact-list"></tbody>
+               </table>
+               <div>
+                  <div class="three columns">
+                     <input
+                        id="name"
+                        class="input"
+                        name="name"
+                        type="text"
+                        placeholder="name"
+                     />
+                     <p class=" name err-text"></p>
+                  </div>
+                  <div class="three columns">
+                     <input
+                        id="surname"
+                        class="input"
+                        name="surname"
+                        type="text"
+                        placeholder="surname"
+                     />
+                     <p class="surname err-text"></p>
+                  </div>
+                  <div class="three columns">
+                     <input
+                        id="phone"
+                        class="input"
+                        name="phone"
+                        type="text"
+                        placeholder="phone"
+                     />
+                     <p class="phone err-text"></p>
+                  </div>
+                  <input
+                     type="submit"
+                     class="two columns add-btn"
+                     value="Add"
+                  />
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <script id="tempContact" type="text/template">
+         <tr class="contact-user" data-id="{{id}}">
+            <td class="contact-name">{{name}}</td>
+            <td class="contact-surname">{{surname}}</td>
+            <td class="contact-phone">{{phone}}</td>
+            <td class="edit-btn">✎</td>
+            <td class="delete-btn">❌</td>
+         </tr>
+      </script>
+   </body>
+</html>

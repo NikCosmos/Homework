@@ -76,7 +76,7 @@ function addTask(objTask) {
 }
 
 function renderListTask() {
-   taskListEl.innerHTML = taskArr.map(generateTaskHtml).join();
+   taskListEl.innerHTML = taskArr.map(generateTaskHtml).join('');
 }
 
 function generateTaskHtml(obj) {
