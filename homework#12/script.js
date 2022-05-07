@@ -167,6 +167,4 @@ function removeContact(id) {
    renderList();
 }
 
-function clearSrorage() {
-   localStorage.removeItem(JSON_KEY);
-}
+
