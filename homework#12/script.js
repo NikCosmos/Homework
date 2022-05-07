@@ -1,3 +1,5 @@
+'use strict';
+
 const TEMP_CONTACT_HTML =
    document.getElementById('tempContact').innerHTML;
 const JSON_KEY = 'contactList';
@@ -86,7 +88,7 @@ function generateContactHtml(contact) {
 }
 
 function interpolate(template, obj) {
-   for (key in obj) {
+   for (let key in obj) {
       template = template.replaceAll(`{{${key}}}`, obj[key]);
    }
 
@@ -166,5 +168,3 @@ function removeContact(id) {
    updateStorage();
    renderList();
 }
-
-
