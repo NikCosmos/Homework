@@ -167,4 +167,4 @@ function removeContact(id) {
    contactList = contactList.filter((obj) => obj.id !== id);
    updateStorage();
    renderList();
-}
+} 
