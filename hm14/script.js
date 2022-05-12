@@ -1,14 +1,17 @@
 'use strict';
 
 const SMALL_BURGER = {
+   size: 'small',
    price: 50,
    calories: 20,
 };
 const MIDDLE_BURGER = {
+   size: 'middle',
    price: 75,
    calories: 30,
 };
 const BIG_BURGER = {
+   size: 'big',
    price: 100,
    calories: 40,
 };
@@ -44,54 +47,40 @@ const TOPPING_MAYO = {
 
 class Hamburger {
    constructor(sizeBurger) {
-      this._listTopping = [];
       this._size = sizeBurger;
+      this._listTopping = [];
+   }
+
+   replaceSize(newSize) {
+      this._size = newSize;
    }
 
    addTopping(toppingObj) {
       this._listTopping.push(toppingObj);
    }
    removeTopping(toppingObj) {
-      const index = this._listTopping.findIndex(
-         (objTop) => objTop.name === toppingObj.name
-      );
+      const index = this._listTopping.findIndex((objTop) => objTop.name === toppingObj.name);
       this._listTopping.splice(index, 1);
    }
    get price() {
-      let sumTopping;
+      let result = null;
       if (this._listTopping.length > 0) {
-         sumTopping = this._listTopping
-            .reduce((acc, val) => acc.concat(val.price), [])
-            .reduce((acc, val) => acc + val);
-      }
-
-      let result;
-      if (sumTopping) {
+         const sumTopping = this._listTopping.reduce((acc, val) => acc.concat(val.price), []).reduce((acc, val) => acc + val);
          result = this._size.price + sumTopping;
       } else {
          result = this._size.price;
       }
-
-      console.log(`Price with sauce: ${result}`);
-      return result;
+      return `Total price: ${result}`;
    }
    get calories() {
-      let sumCalories;
+      let result = null;
       if (this._listTopping.length > 0) {
-         sumCalories = this._listTopping
-            .reduce((acc, val) => acc.concat(val.calories), [])
-            .reduce((acc, val) => acc + val);
-      }
-
-      let result;
-      if (sumCalories) {
+         const sumCalories = this._listTopping.reduce((acc, val) => acc.concat(val.calories), []).reduce((acc, val) => acc + val);
          result = this._size.calories + sumCalories;
       } else {
          result = this._size.calories;
       }
-
-      console.log(`Price with sauce: ${result}`);
-      return result;
+      return `Total calories: ${result}`;
    }
 }
 
