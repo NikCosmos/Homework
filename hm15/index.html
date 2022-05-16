@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+      />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/dark-theme.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="script.js" async></script>
+      <title>Homework#15</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="container">
+            <table class="dfk u-full-width">
+               <thead>
+                  <th>NAME</th>
+                  <th>EMAIL</th>
+                  <th>PHONE</th>
+                  <th>ADDRESS</th>
+               </thead>
+               <tbody id="userList">
+                  <tr>
+                     <td>Валера</td>
+                     <td>valerea@gmail.com</td>
+                     <td>0965324234</td>
+                     <td>Cite country</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <script id="tempUser" type="text/template">
+         <tr>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+            <td>{{city}},{{street}}</td>
+         </tr>
+      </script>
+   </body>
+</html>
