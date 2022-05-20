@@ -21,9 +21,7 @@ function getData() {
 }
 
 function renderList() {
-   return (userListEl.innerHTML = allUserData
-      .map(createdHtml)
-      .join(''));
+   userListEl.innerHTML = allUserData.map(createdHtml).join('');
 }
 
 function createdHtml(user) {
