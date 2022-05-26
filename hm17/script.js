@@ -10,11 +10,11 @@ const TEMP_NAME_ALBUM = document.getElementById('tempNameAlbum').innerHTML;
 const TEMP_IMG = document.getElementById('tempImg').innerHTML;
 const TEMP_FULL_IMG = document.getElementById('fullImg').innerHTML;
 
-const API__ALBUMS = 'https://jsonplaceholder.typicode.com/albums/';
-const API__IMG = 'https://jsonplaceholder.typicode.com/photos?albumId=';
+const API_ALBUMS = 'https://jsonplaceholder.typicode.com/albums/';
+const API_IMG = 'https://jsonplaceholder.typicode.com/photos?albumId=';
 
-const listNameApi = new RestApi(API__ALBUMS);
-const imgApi = new RestApi(API__IMG);
+const listNameApi = new RestApi(API_ALBUMS);
+const imgApi = new RestApi(API_IMG);
 
 const containerEl = document.querySelector('.container');
 const listAlbumEl = document.querySelector('.list-albums');
