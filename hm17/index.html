@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/dark-theme.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="../common/RestApi.js" defer></script>
+      <script src="script.js" defer></script>
+      <title>Homework#17</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="u-full-width container">
+            <div class="list-title-content three columns">
+               <h2 class="list-title">The name of the album</h2>
+               <div class="list-albums"></div>
+            </div>
+            <div class="list-img-conten">
+               <h2 class="album-list-img-title eight columns">Pictures</h2>
+               <div class="album-list-img eight columns"></div>
+            </div>
+            <div class="popup">
+               <div class="popup-content"></div>
+            </div>
+         </div>
+      </div>
+      <script id="tempNameAlbum" type="text/template">
+         <div data-album-id="{{id}}" class="album-name">
+            {{title}}
+         </div>
+      </script>
+      <script id="tempImg" type="text/template">
+         <img class="album-img"  data-img-id="{{id}}"  src="{{src}}" alt="Картинка" />
+      </script>
+      <script id="fullImg" type="text/template">
+         <img class="popup-img" src="{{url}}" alt="" />
+      </script>
+   </body>
+</html>
