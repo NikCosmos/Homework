@@ -1,3 +1,13 @@
+const CLASS = {
+   ADD_BTN: 'head-button',
+   DEL_BTN: 'delete-button',
+   DESCR: 'descr-text',
+};
+
+const SELECTORS = {
+   STICK: '.main-item',
+};
+
 const TEMP_STICK = document.getElementById('tempStickItem').innerHTML;
 
 const STICKERS_URL = 'https://5dd3d5ba8b5e080014dc4bfa.mockapi.io/stickers/';
@@ -7,18 +17,20 @@ const contentEl = document.querySelector('.wrapper');
 const listStickEl = document.querySelector('.main-row');
 
 contentEl.addEventListener('click', (e) => {
-   if (e.target.classList.contains('head-button')) {
+   if (e.target.classList.contains(CLASS.ADD_BTN)) {
       addNewStick();
    }
-   if (e.target.classList.contains('delete-button')) {
-      const item = e.target.closest('.main-item');
+   if (e.target.classList.contains(CLASS.DEL_BTN)) {
+      const item = e.target.closest(SELECTORS.STICK);
       deleteStick(getId(item));
    }
 });
 
 contentEl.addEventListener('focusout', (e) => {
-   const upItem = e.target.closest('.main-item');
-   updateStick(upItem);
+   if (e.target.classList.contains(CLASS.DESCR)) {
+      const upItem = e.target.closest(SELECTORS.STICK);
+      updateStick(upItem);
+   }
 });
 
 let listStick = [];
@@ -65,14 +77,17 @@ function deleteStick(id) {
 
 function updateStick(upItem) {
    const updatedItem = addObjStick(upItem);
-   StickApi.update(updatedItem);
+   StickApi.update(updatedItem).catch(fetchStickList);
 }
 
 function addObjStick(item) {
+   return addNewObj(item);
+}
+
+function addNewObj(item) {
    const id = getId(item);
    const description = getDestcription(item);
-   const objStick = { id, description };
-   return objStick;
+   return { id, description };
 }
 
 function getDestcription(item) {
