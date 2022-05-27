@@ -3,8 +3,19 @@ class RestApi {
       this._baseUrl = baseUrl;
    }
 
-   getList() {
-      return fetch(this._baseUrl).then((res) => res.json());
+   static getQueryString(query) {
+      let result = '';
+
+      for (key in query) {
+         result += result ? '&' : '?';
+         result += `${key}=${query[key]}`;
+      }
+
+      return result;
+   }
+
+   getList(query = {}) {
+      return fetch(this._baseUrl + RestApi.getQueryString(query)).then((res) => res.json());
    }
    getOne(id) {
       return fetch(this._baseUrl + id).then((res) => res.json());
@@ -19,9 +30,9 @@ class RestApi {
       }).then((res) => res.json());
    }
    update(data) {
-      return fetch(this._baseUrl, {
+      return fetch(this._baseUrl + data.id, {
          method: 'PUT',
-         body: JSON.stringify(date),
+         body: JSON.stringify(data),
          headers: {
             'Content-Type': 'application/json',
          },

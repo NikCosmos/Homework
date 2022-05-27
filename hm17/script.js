@@ -84,8 +84,7 @@ function getUrlImg(id) {
 }
 
 function renderNameList() {
-   const createHtml = listTitle.map(interName).join(' ');
-   listAlbumEl.innerHTML = createHtml;
+   listAlbumEl.innerHTML = listTitle.map(interName).join(' ');
 }
 function interName(obj) {
    return TEMP_NAME_ALBUM.replace('{{id}}', obj.id).replace('{{title}}', obj.title);

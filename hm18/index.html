@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/dark-theme.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="../common/RestApi.js" defer></script>
+      <script src="../common/utility.js" defer></script>
+      <script src="script.js" defer></script>
+      <title>Homework#18</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="u-full-width content">
+            <h3 class="head-row">
+               <p>click to add new sticker ==>>>></p>
+               <button type="submit" class="head-button">Add</button>
+            </h3>
+            <div class="main-row">
+               <div class="main-item">
+                  <div class="delete-row">
+                     <button type="submit" class="button">DELETE</button>
+                  </div>
+                  <div class="descr-row">
+                     <textarea class="descr-text" name="description" id=""></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script id="tempStickItem" type="text/template">
+         <div id ='stickItem' data-id = '{{id}}' class="main-item">
+            <div id = 'stickBtn' class="delete-row">
+               <button type="submit" class="delete-button">DELETE</button>
+            </div>
+            <textarea class="descr-text" name="description" id="stickText">{{description}}</textarea>
+         </div>
+      </script>
+   </body>
+</html>
