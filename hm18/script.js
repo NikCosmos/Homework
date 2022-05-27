@@ -48,18 +48,6 @@ function fetchStickList() {
    });
 }
 
-function renderList() {
-   listStickEl.innerHTML = listStick.map(renderItem).join('');
-}
-
-function renderItem(stick) {
-   return interpolate(TEMP_STICK, stick);
-}
-
-function getId(el) {
-   return el.dataset.id;
-}
-
 function addNewStick() {
    const id = Date.now();
    const newStick = { id, description: '' };
@@ -92,4 +80,15 @@ function addNewObj(item) {
 
 function getDestcription(item) {
    return item.children[1].value;
+}
+function getId(el) {
+   return el.dataset.id;
+}
+
+function renderList() {
+   listStickEl.innerHTML = listStick.map(renderItem).join('');
+}
+
+function renderItem(stick) {
+   return interpolate(TEMP_STICK, stick);
 }
