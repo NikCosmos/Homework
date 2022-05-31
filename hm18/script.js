@@ -43,7 +43,7 @@ function init() {
 
 function fetchStickList() {
    StickApi.getList().then((data) => {
-      listStick = data;
+      $listStick = data;
       renderList();
    });
 }
@@ -51,14 +51,14 @@ function fetchStickList() {
 function addNewStick() {
    const id = Date.now();
    const newStick = { id, description: '' };
-   listStick.push(newStick);
+   $listStick.push(newStick);
    renderList();
    StickApi.create(newStick).then(fetchStickList).catch(fetchStickList);
 }
 
 function deleteStick(id) {
-   const index = listStick.findIndex((obj) => obj.id === id);
-   listStick.splice(index, 1);
+   const index = $listStick.findIndex((obj) => obj.id === id);
+   $listStick.splice(index, 1);
    renderList();
    StickApi.delete(id).catch(fetchStickList);
 }
@@ -86,7 +86,8 @@ function getId(el) {
 }
 
 function renderList() {
-   listStickEl.innerHTML = listStick.map(renderItem).join('');
+   listStickEl.innerHTML = $listStick.map(renderItem).join('');
+   listStickEl.insertAdjacentElement;
 }
 
 function renderItem(stick) {
