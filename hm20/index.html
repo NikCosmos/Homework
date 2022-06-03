@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="litebox/lightbox.css" />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/skeleton.css" />
+      <link rel="stylesheet" href="css/dark-theme.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js" defer></script>
+      <script src="litebox/lightbox.min.js" defer></script>
+      <script src="../common/RestApi.js" defer></script>
+      <script src="../common/utility.js" defer></script>
+      <script src="script.js" defer></script>
+      <title>Homework#20</title>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="u-full-width content">
+            <div class="list-album"></div>
+            <div class="images"></div>
+         </div>
+      </div>
+      <script id="tempItem" type="text/template">
+         <p data-id="{{id}}" class="album-item">{{title}}</p>
+      </script>
+
+      <script id="tempImg" type="text/template">
+         <a data-lightbox="{{albumId}}'" class="img-item" href="{{url}}">
+            <img src="{{thumbnailUrl}}" alt="img" />
+         </a>
+      </script>
+   </body>
+</html>

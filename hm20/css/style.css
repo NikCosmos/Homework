@@ -1,0 +1,18 @@
+* {
+   padding: 0px;
+   margin: 0px;
+}
+
+.content {
+   display: flex;
+}
+.list-album {
+   flex: 0 0 30%;
+}
+.images {
+}
+
+.album-item:hover {
+   background-color: #fff;
+   color: black;
+}
