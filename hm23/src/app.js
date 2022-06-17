@@ -1,0 +1,3 @@
+$(() => {
+   new TodosController($('.task-list'));
+});
