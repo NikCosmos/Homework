@@ -1,4 +1,4 @@
-class RestApi {
+export default class RestApi {
    constructor(baseUrl) {
       this._baseUrl = baseUrl;
    }
