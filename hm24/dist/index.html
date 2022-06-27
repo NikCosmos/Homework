@@ -2,53 +2,37 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1.0"
-      />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <link rel="stylesheet" href="css/style-min.css" />
-      <script
-         src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"
-         defer
-      ></script>
-      <script src="js/app-min.js" defer></script>
-      <title>Todo list</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="main.js" defer></script>
+      <title>Homework#24</title>
    </head>
    <body>
-      <div class="container">
-         <div class="task-list"></div>
-         <form id="addTaskForm">
-            <div class="row">
-               <div class="ten columns">
-                  <input
-                     type="text"
-                     name="title"
-                     id="taskNameInput"
-                     class="u-full-width"
-                  />
-                  <span
-                     id="errorContainer"
-                     class="error hidden"
-                  ></span>
-               </div>
-               <div class="two columns">
-                  <button
-                     type="submit"
-                     id="addBtn"
-                     class="add-btn u-full-width"
-                  >
-                     Add
-                  </button>
-               </div>
+      <div class="wrapper">
+         <div class="u-full-width container">
+            <div class="list-title-content three columns">
+               <h2 class="list-title">The name of the album</h2>
+               <div class="list-albums"></div>
             </div>
-         </form>
-         <script type="text/template" id="taskItemTemplate">
-            <div class="task-item u-full-width {{doneClass}}" data-id="{{id}}">
-                {{title}}
-                <span class="delete-btn">✘</span>
+            <div class="list-img-conten">
+               <h2 class="album-list-img-title eight columns">Pictures</h2>
+               <div class="album-list-img eight columns"></div>
             </div>
-         </script>
+            <div class="popup">
+               <div class="popup-content"></div>
+            </div>
+         </div>
       </div>
+      <script id="tempNameAlbum" type="text/template">
+         <div data-album-id="{{id}}" class="album-name">
+            {{title}}
+         </div>
+      </script>
+      <script id="tempImg" type="text/template">
+         <img class="album-img"  data-img-id="{{id}}"  src="{{src}}" alt="Картинка" />
+      </script>
+      <script id="fullImg" type="text/template">
+         <img class="popup-img" src="{{url}}" alt="" />
+      </script>
    </body>
 </html>

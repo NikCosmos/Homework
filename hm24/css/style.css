@@ -1,0 +1,48 @@
+.container {
+}
+
+.album-list-img-title {
+   text-align: center;
+}
+
+.album-name {
+   padding: 5px;
+   margin-bottom: 10px;
+   border: 2px solid #fff;
+   font-size: 14px;
+   line-height: 135%;
+   cursor: pointer;
+}
+
+.album-name:hover {
+   color: #000;
+   background-color: #fff;
+}
+
+.list-img-content {
+   overflow: auto;
+}
+
+.popup {
+   transition: all 0.3s ease 0s;
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(10, 10, 10, 0.795);
+   top: 0;
+   left: 0;
+}
+.popup-content {
+   min-height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.popup.active {
+   transition: all 0.3s ease 0s;
+   opacity: 1;
+   visibility: visible;
+}
