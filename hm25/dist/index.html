@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Homework#16</title>
+   <script defer src="main.js"></script></head>
+   <body>
+      <div class="wrapper">
+         <div class="container">
+            <table class="dfk u-full-width">
+               <thead>
+                  <th>NAME</th>
+                  <th>EMAIL</th>
+                  <th>PHONE</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
+               </thead>
+               <tbody id="userList"></tbody>
+               <form id="submitForm">
+                  <tfoot>
+                     <tr>
+                        <td>
+                           <input type="hidden" name="id" class="contact-data hidden-input" />
+                           <input name="name" class="contact-data" type="text" />
+                        </td>
+                        <td>
+                           <input name="phone" class="contact-data" type="text" />
+                        </td>
+                        <td>
+                           <input name="email" class="contact-data" type="text" />
+                        </td>
+                        <td><input type="submit" value="SEND" /></td>
+                     </tr>
+                  </tfoot>
+               </form>
+            </table>
+         </div>
+      </div>
+      <script id="tempUser" type="text/template">
+         <tr class = 'contact-user' data-id="{{id}}">
+            <td>{{name}}</td>
+            <td>{{phone}}</td>
+            <td>{{email}}</td>
+            <td><button class ='edit-btn'>EDIT</button></td>
+            <td><button class ='delete-btn'>DELETE</button></td>
+         </tr>
+      </script>
+   </body>
+</html>

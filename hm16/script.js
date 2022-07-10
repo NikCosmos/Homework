@@ -72,7 +72,6 @@ function getContact() {
 }
 
 function sendContact(сontact) {
-   console.log(сontact);
    if (сontact.id) {
       updateContact(сontact);
    } else {
