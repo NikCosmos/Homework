@@ -37,6 +37,7 @@ class Calc extends Component {
       }
    };
 
+
    render() {
       return (
          <div className="wrapper">

@@ -1,0 +1,22 @@
+.task {
+   cursor: pointer;
+}
+.container {
+   margin-top: 300px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.delbtn {
+   float: right;
+}
+ul {
+   text-align: left;
+}
+
+[data-status='true'] {
+   background-color: teal;
+}
